@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Hotel Booking Chatbot</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Leaflet CSS - Using jsDelivr CDN as fallback -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <div class="logo-container">
+            <img
+              src="Photos/WhatsApp Image 2025-10-29 at 10.56.29_eeb88e5c.jpg"
+              alt="Hotel Logo"
+              class="logo-image"
+            />
+            <!--Edit1-->
+            <!--Edit1-->
+            <div class="logo-text">
+              <h1>AI Hotel Finder</h1>
+              <p class="tagline">Find your perfect hotel with AI assistance</p>
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="toggleMapBtn" class="btn btn-secondary">
+            <span id="mapToggleIcon">🗺️</span> Show Map
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <!-- Left Panel: Chatbot -->
+        <div class="chat-panel">
+          <div class="chat-container">
+            <!-- Chat Messages Area -->
+            <div id="chatMessages" class="chat-messages">
+              <!-- Welcome Message -->
+              <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                  <div class="message-bubble">
+                    <p><strong>Welcome to AI Hotel Finder!</strong></p>
+                    <p>I can help you find the perfect hotel. Try asking:</p>
+                    <ul>
+                      <li>"Find me a cheap hotel near Al-Haram with WiFi"</li>
+                      <li>"Show me luxury hotels in Riyadh"</li>
+                      <li>"Hotels near the Prophet's Mosque"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div
+              id="typingIndicator"
+              class="typing-indicator"
+              style="display: none"
+            >
+              <div class="message-avatar">🤖</div>
+              <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-container">
+              <form id="chatForm" class="chat-input-form">
+                <input
+                  type="text"
+                  id="chatInput"
+                  class="chat-input"
+                  placeholder="Ask me anything about hotels..."
+                  autocomplete="off"
+                  required
+                />
+                <button type="submit" id="sendBtn" class="btn btn-primary">
+                  <span id="sendIcon">📤</span>
+                </button>
+              </form>
+              <div id="quickActions" class="quick-actions"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Map (Hidden by default) -->
+        <div id="mapPanel" class="map-panel" style="display: none">
+          <div class="map-container">
+            <div id="map" class="map"></div>
+            <div class="map-info">
+              <h3>📍 Hotel Locations</h3>
+              <p id="mapInfo">Click on markers to see hotel details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel Details Modal -->
+      <div id="hotelModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <div id="hotelDetails" class="hotel-details-container">
+            <!-- Hotel details will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading Overlay -->
+      <div id="loadingOverlay" class="loading-overlay" style="display: none">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Leaflet JS - Using jsDelivr CDN as fallback -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>

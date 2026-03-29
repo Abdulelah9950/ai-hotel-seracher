@@ -1,0 +1,29 @@
+# Python Dependencies for AI Hotel Booking Chatbot
+# Install with: pip install -r requirements.txt
+
+# Web Framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+
+# Database
+mysql-connector-python==8.2.0
+
+# AI/NLP Libraries
+textblob==0.17.1
+fuzzywuzzy==0.18.0
+# python-Levenshtein==0.23.0  # Optional - has build issues with Python 3.14
+
+# Data Processing
+pandas>=2.2.0
+
+# Location & Distance
+geopy==2.4.1
+
+# HTTP Requests (for Google Maps API)
+requests==2.31.0
+
+# Google Maps Integration
+googlemaps==4.10.0
+
+# Environment Variables
+python-dotenv==1.0.0
